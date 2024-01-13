@@ -4,6 +4,25 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    private func configureNavigationBar() {
+        let size = 20
+        let logoImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: size, height: size))
+        logoImageView.contentMode = .scaleAspectFill
+        logoImageView.image = UIImage(named:"imagename1")
+        
+        let middleView = UIView(frame: CGRect(x: 0, y: 0, width: size, height: size))
+        middleView.addSubview(logoImageView)
+        navigationItem.titleView = middleView
+        
+        let profileImage = UIImage(systemName: "person")
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: profileImage, style: .plain, target: self, action: #selector(didTapProfile))
+    }
+    
+    @objc func didTapProfile() {
+        let vc = ProfileViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     private let timelineTableView = {
         let tableView = UITableView()
         tableView.register(TweetTableViewCell.self,  forCellReuseIdentifier: TweetTableViewCell.identifier)
@@ -15,7 +34,7 @@ class HomeViewController: UIViewController {
         view.addSubview(timelineTableView)
         timelineTableView.dataSource = self
         timelineTableView.delegate = self
-        
+        configureNavigationBar()
     }
     
     override func viewDidLayoutSubviews() {
@@ -31,10 +50,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: TweetTableViewCell.identifier , for: indexPath) as? TweetTableViewCell else {	 
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: TweetTableViewCell.identifier , for: indexPath) as? TweetTableViewCell else {
             return UITableViewCell()
         }
-        cell.selectionStyle = .none
         cell.delegate = self
         return cell
     }

@@ -20,6 +20,8 @@
 		9680E09A2B4A44990066F767 /* DirectMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9680E0992B4A44990066F767 /* DirectMessagesViewController.swift */; };
 		9680E09C2B4A46390066F767 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9680E09B2B4A46390066F767 /* NotificationsViewController.swift */; };
 		9680E09F2B4A5C730066F767 /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9680E09E2B4A5C730066F767 /* TweetTableViewCell.swift */; };
+		9698C2222B52849A00B9A64D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9698C2212B52849A00B9A64D /* ProfileViewController.swift */; };
+		9698C2242B528FDB00B9A64D /* ProfileTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9698C2232B528FDB00B9A64D /* ProfileTableViewHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		9680E0992B4A44990066F767 /* DirectMessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectMessagesViewController.swift; sourceTree = "<group>"; };
 		9680E09B2B4A46390066F767 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		9680E09E2B4A5C730066F767 /* TweetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
+		9698C2212B52849A00B9A64D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		9698C2232B528FDB00B9A64D /* ProfileTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +142,7 @@
 		9680E0932B4A437C0066F767 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9698C2202B52846400B9A64D /* General */,
 				9680E0942B4A43A80066F767 /* Core */,
 			);
 			path = Controllers;
@@ -159,8 +164,17 @@
 			isa = PBXGroup;
 			children = (
 				9680E09E2B4A5C730066F767 /* TweetTableViewCell.swift */,
+				9698C2232B528FDB00B9A64D /* ProfileTableViewHeader.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		9698C2202B52846400B9A64D /* General */ = {
+			isa = PBXGroup;
+			children = (
+				9698C2212B52849A00B9A64D /* ProfileViewController.swift */,
+			);
+			path = General;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,7 +313,9 @@
 				9680E0662B4A40D40066F767 /* SceneDelegate.swift in Sources */,
 				9680E0962B4A44460066F767 /* HomeViewController.swift in Sources */,
 				9680E09C2B4A46390066F767 /* NotificationsViewController.swift in Sources */,
+				9698C2222B52849A00B9A64D /* ProfileViewController.swift in Sources */,
 				9680E09A2B4A44990066F767 /* DirectMessagesViewController.swift in Sources */,
+				9698C2242B528FDB00B9A64D /* ProfileTableViewHeader.swift in Sources */,
 				9680E09F2B4A5C730066F767 /* TweetTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
