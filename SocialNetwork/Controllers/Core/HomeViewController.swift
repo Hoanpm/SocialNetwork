@@ -31,9 +31,31 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: TweetTableViewCell.identifier , for: indexPath) as? TweetTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: TweetTableViewCell.identifier , for: indexPath) as? TweetTableViewCell else {	 
             return UITableViewCell()
         }
+        cell.selectionStyle = .none
+        cell.delegate = self
         return cell
     }
+}
+
+extension HomeViewController: TweetTableViewCellDelegate {
+    func tweetTableViewCellDidTapReply() {
+        print("oke")
+    }
+    
+    func tweetTableViewCellDidTapRetweet() {
+        print("oke1")
+    }
+    
+    func tweetTableViewCellDidTapLike() {
+        print("oke2")
+    }
+    
+    func tweetTableViewCellDidTapShare() {
+        print("oke3")
+    }
+    
+    
 }
