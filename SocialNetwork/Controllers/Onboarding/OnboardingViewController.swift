@@ -14,7 +14,7 @@ class OnboardingViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Login", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 14)
-        button.tintColor = UIColor(red: 29/255, green: 161/255, blue: 242/255, alpha: 1)
+        button.tintColor = .SnsBlueColor
         return button
     }()
     
@@ -43,7 +43,7 @@ class OnboardingViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Create Account", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 24, weight: .bold)
-        button.backgroundColor = UIColor(red: 29/255, green: 161/255, blue: 242/255, alpha: 1)
+        button.backgroundColor = .SnsBlueColor
         button.layer.masksToBounds = true
         button.tintColor = .white
         button.layer.cornerRadius = 30
@@ -60,7 +60,14 @@ class OnboardingViewController: UIViewController {
         
         createAccountButton.addTarget(self, action: #selector(didTapCreateAccount), for: .touchUpInside)
         
+        loginButton.addTarget(self, action: #selector(didTapLogin), for: .touchUpInside)
+        
         configureConstraint()
+    }
+    
+    @objc private func didTapLogin() {
+        let vc = LoginViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc private func didTapCreateAccount() {

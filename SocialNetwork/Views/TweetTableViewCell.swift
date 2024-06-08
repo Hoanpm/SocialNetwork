@@ -23,14 +23,12 @@ class TweetTableViewCell: UITableViewCell {
         imageView.layer.cornerRadius = 25
         imageView.layer.masksToBounds = true
         imageView.clipsToBounds = true
-        imageView.image = UIImage(systemName: "person")
         imageView.backgroundColor = .red
         return imageView
     }()
     
     private let displayNameLabel : UILabel = {
         let label = UILabel()
-        label.text = "Hoan vu"
         label.font = .systemFont(ofSize: 18, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -38,7 +36,6 @@ class TweetTableViewCell: UITableViewCell {
     
     private let usernameLabel : UILabel = {
         let label = UILabel()
-        label.text = "@hoan9203"
         label.textColor = .secondaryLabel
         label.font = .systemFont(ofSize: 16, weight: .regular)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -48,7 +45,6 @@ class TweetTableViewCell: UITableViewCell {
     private let tweetTextContentLabel : UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "this is my Mockup tweet. it is going to take a longggggggggggggggggggg line because i need to test something so let talk more and more about this app naaaa i try to say so much"
         label.numberOfLines = 0
         return label
     }()
@@ -120,6 +116,13 @@ class TweetTableViewCell: UITableViewCell {
         retweetButton.addTarget(self, action: #selector(didTapRetweet), for: .touchUpInside)
         likeButton.addTarget(self, action: #selector(didTapLike), for: .touchUpInside)
         shareButton.addTarget(self, action: #selector(didTapShare), for: .touchUpInside)
+    }
+    
+    func configureTweet(with displayName: String, userName: String, tweetTextContent: String, avatarPath: String) {
+        displayNameLabel.text = displayName
+        usernameLabel.text = "@\(userName)"
+        tweetTextContentLabel.text = tweetTextContent
+        avatarImageView.sd_setImage(with: URL(string: avatarPath))
     }
     
     private func configureConstraints() {
